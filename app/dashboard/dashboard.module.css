@@ -1,0 +1,200 @@
+/* Main dashboard container */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #8094b8;
+  color: white;
+  padding: 20px;
+}
+
+/* Dashboard header (navigation bar or title area) */
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.dashboardHeader h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.dashboardHeader nav {
+  display: flex;
+  align-items: center;
+}
+
+.dashboardHeader nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.dashboardHeader nav a:hover {
+  text-decoration: underline;
+}
+
+/* User icon container */
+.userIconContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Sign Out Button Style */
+/* .signOutButton {
+  background-color: #f44336; /* Red color */
+  /* color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 20px; /* Space between button and user icon */
+/* } */ 
+
+.signOutButton:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* User icon */
+.userIcon {
+  font-size: 2rem;
+  color: white;
+}
+
+/* User dropdown styles */
+.userDropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  min-width: 200px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.userDropdown p {
+  margin: 5px 0;
+}
+
+.userDropdown p strong {
+  font-weight: bold;
+}
+
+/* Dashboard main content area */
+.dashboardContent {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start; /* Align items to the start */
+  gap: 200px; /* Add a small gap between sections */
+  padding: 20px 30px; /* Reduce horizontal padding */
+  width: 100%;
+}
+
+/* Home screen container */
+.homeScreen {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Stats section under the welcome text */
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Individual stat item */
+.statItem {
+  background-color: #346ed1;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 24%;
+  text-align: center;
+}
+
+/* Dashboard sections for specific roles */
+.dashboardSection {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section titles */
+.dashboardSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Paragraph content within sections */
+.dashboardSection p {
+  font-size: 1.2rem;
+  cursor: pointer;  /* Make the text clickable */
+  color: #e5e8ee;    /* Set the default color of the text */
+  font-weight: bold; /* Make the text bold */
+  transition: all 0.3s ease; /* Smooth transition for hover and active */
+}
+
+/* Hover effect */
+.dashboardSection p:hover {
+  color: #292626; /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Highlight active section */
+.activeLink {
+  color: #01050e;   /* Color when active */
+  text-decoration: underline; /* Underline when active */
+}
+
+/* Loading state for when user data is being fetched */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.dashboardHeader nav.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Consistent spacing */
+}
+
+.dashboardHeader nav.navLinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.signOutButton {
+  background-color: #4faaf5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
