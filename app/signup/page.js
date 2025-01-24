@@ -29,6 +29,7 @@ const SignUpPage = () => {
          "Content-Type": "application/json",
        },
        body: JSON.stringify({
+         name:formData.name,
          username: formData.username,
          email: formData.email,
          password: formData.password,
@@ -54,6 +55,19 @@ const SignUpPage = () => {
        <h2 className={styles.label}>Create an Account</h2>
        <form onSubmit={handleSignUp}>
          {error && <div className={styles.error}>{error}</div>}
+         <div className={styles.formGroup}>
+           <label className={styles.label} htmlFor="name">Name</label>
+           <input 
+             className={styles.textFiled}
+             type="text"
+             id="name"
+             name="name"
+             placeholder="Enter your name"
+             value={formData.name}
+             onChange={handleInputChange}
+             required
+           />
+         </div>
          
          <div className={styles.formGroup}>
            <label className={styles.label} htmlFor="username">Username</label>

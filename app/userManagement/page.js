@@ -28,15 +28,26 @@ const UserManagement = () => {
   }, [router]);
 
   const fetchUsers = async () => {
-    const mockUsers = [
-      { id: 1, name: "Alice Johnson", role: "Admin", email: "alice@example.com" },
-      { id: 2, name: "Bob Smith", role: "Manager", email: "bob@example.com" },
-      { id: 3, name: "Charlie Brown", role: "User", email: "charlie@example.com" },
-      { id: 4, name: "Diana Prince", role: "User", email: "diana@example.com" },
-    ];
-    setUsers(mockUsers);
-    setIsLoading(false);
-  };
+    try {
+      const response = await fetch("http://localhost:8009/users", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`
+        }
+      });
+   
+      if (response.ok) {
+        const data = await response.json();
+        // Access the users array from the response
+        setUsers(data.users); 
+      } else {
+        setError("Failed to fetch users");
+      }
+    } catch (err) {
+      setError("Error connecting to server");
+    } finally {
+      setIsLoading(false);
+    }
+   };
 
   const handleUserClick = () => {
     setShowDropdown((prevState) => !prevState);
